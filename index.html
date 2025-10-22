@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Paket SAMP — Hosting</title>
+  <title>Paket Hosting SAMP — RASSAMP</title>
   <style>
     :root{
-      --bg:#0b1220; --card:#0f1724; --accent:#06b6d4; --muted:#94a3b8; --glass:rgba(255,255,255,0.04);
-      --success:#10b981; --danger:#ef4444;
+      --bg:#0b1220;--card:#0f1724;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.04);
+      --success:#10b981;
     }
-    *{box-sizing:border-box;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    body{margin:0;background:linear-gradient(180deg,#071029 0%, #081226 100%);color:#e6eef6;min-height:100vh;padding:32px;}
+    *{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
+    body{margin:0;background:linear-gradient(180deg,#071029 0%,#081226 100%);color:#e6eef6;min-height:100vh;padding:32px;}
     .container{max-width:1100px;margin:0 auto;}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
     header h1{font-size:20px;margin:0}
@@ -19,40 +19,34 @@
     .chip{background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
     .os-toggle{display:flex;gap:8px;background:transparent;padding:6px;border-radius:8px}
     .os-toggle button{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
-    .os-toggle button.active{background:linear-gradient(90deg,#062231, #04323a);border-color:var(--accent);color:#e6f9fb;box-shadow:0 6px 18px rgba(6,182,212,0.06)}
-    .grid{display:grid;grid-template-columns:repeat( auto-fit, minmax(220px,1fr) );gap:18px;margin-top:18px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:16px;border-radius:12px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+    .os-toggle button.active{background:linear-gradient(90deg,#062231,#04323a);border-color:var(--accent);color:#e6f9fb;box-shadow:0 6px 18px rgba(6,182,212,0.06)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:16px;border-radius:12px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
+    .card:hover{transform:translateY(-6px)}
     .card h3{margin:0 0 6px 0;font-size:18px;color:#fff}
     .specs{font-size:13px;color:var(--muted);margin:8px 0 12px}
     .price{font-weight:700;font-size:18px;color:var(--accent)}
     .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#042024;text-decoration:none;font-weight:700;cursor:pointer;border:none}
     .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
-    .features{font-size:13px;color:var(--muted);margin-top:12px}
-    footer{margin-top:22px;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(6,182,212,0.03), rgba(255,255,255,0.01));display:flex;justify-content:space-between;align-items:center;gap:12px}
+    footer{margin-top:22px;padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(6,182,212,0.03),rgba(255,255,255,0.01));display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
     .order-summary{min-width:260px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
     .summary-line{display:flex;justify-content:space-between;margin-bottom:8px;color:var(--muted);font-size:14px}
     .summary-line strong{color:#e6eef6}
-    .note{color:var(--muted);font-size:13px}
     .badge{display:inline-block;padding:6px 8px;border-radius:8px;background:rgba(16,185,129,0.11);color:var(--success);font-weight:700;font-size:13px}
-    @media(max-width:640px){
-      header{flex-direction:column;align-items:flex-start;gap:8px}
-      footer{flex-direction:column;align-items:stretch}
-      .order-summary{width:100%}
-    }
-    .card:hover{transform:translateY(-6px);transition:transform .18s ease}
+    .note{color:var(--muted);font-size:13px}
+    @media(max-width:640px){footer{flex-direction:column;align-items:stretch}.order-summary{width:100%}}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <div>
-        <h1>Paket Hosting SAMP</h1>
-        <p>Lokasi: Singapore · Network 1Gbps · Free voice port · Pilih Windows atau Linux</p>
+        <h1>Hosting SAMP — RASSAMP</h1>
+        <p>Network 1Gbps · Free Voice Port · Pilih OS · Dijamin Lancar</p>
       </div>
       <div class="controls">
-        <div class="chip">Garansi: <strong style="margin-left:6px;color:#dffaf6">Dijamin lancar</strong></div>
-        <div style="width:10px"></div>
-        <div class="os-toggle" role="tablist" aria-label="Pilih OS">
+        <div class="chip">Garansi: <strong style="margin-left:6px;color:#dffaf6">Lancar 100%</strong></div>
+        <div class="os-toggle">
           <button id="os-linux" class="active" onclick="selectOS('Linux')">Linux</button>
           <button id="os-windows" onclick="selectOS('Windows')">Windows</button>
         </div>
@@ -60,141 +54,122 @@
     </header>
 
     <main>
-      <div class="grid" id="plans">
-        <!-- Cards generated by JS -->
-      </div>
+      <div class="grid" id="plans"></div>
 
       <footer>
         <div>
-          <div class="note"><strong>Reques bebas</strong> · Free port voice · Pilih OS saat order · Kami pastikan lancar</div>
+          <div class="note"><strong>Order Bebas</strong> · Tambahkan upgrade sesuai kebutuhan.</div>
           <div style="height:6px"></div>
-          <div class="note">Ingin custom resources / upgrade? Klik tombol <em>Order</em> dan kirim spesifikasi.</div>
+          <div class="note">Klik tombol Order di bawah untuk kirim ke WhatsApp otomatis.</div>
         </div>
 
-        <div class="order-summary" id="orderBox" aria-live="polite">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-            <div><strong>Ringkasan Order</strong></div>
-            <div class="badge">Ready</div>
+        <div class="order-summary" id="orderBox">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <strong>Ringkasan Order</strong>
+            <span class="badge">Ready</span>
           </div>
           <div class="summary-line"><span>Paket</span><strong id="selPlan">-</strong></div>
           <div class="summary-line"><span>OS</span><strong id="selOS">Linux</strong></div>
           <div class="summary-line"><span>CPU / RAM</span><strong id="selSpec">-</strong></div>
           <div class="summary-line"><span>Harga</span><strong id="selPrice">-</strong></div>
+          <div class="summary-line"><span>Tambahan</span><strong id="selExtra">-</strong></div>
           <div style="height:8px"></div>
-          <button class="btn" id="orderBtn" onclick="placeOrder()">Order via WhatsApp</button>
-          <button class="btn ghost" style="margin-left:8px" id="copyBtn" onclick="copySummary()">Copy Ringkasan</button>
+          <button class="btn" onclick="placeOrder()">Order via WhatsApp</button>
+          <button class="btn ghost" style="margin-left:8px" onclick="copySummary()">Copy Ringkasan</button>
+          <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap">
+            <button class="btn ghost" onclick="addExtra('Upgrade RAM +1GB (Rp5.000)')">+ RAM +1GB</button>
+            <button class="btn ghost" onclick="addExtra('Upgrade Disk +1GB (Rp4.000)')">+ Disk +1GB</button>
+            <button class="btn ghost" onclick="addExtra('Upgrade Slot +50 (Rp5.000)')">+ Slot +50</button>
+            <button class="btn ghost" onclick="addExtra('Pasang GM LRP (Rp8.000)')">+ GM LRP</button>
+            <button class="btn ghost" onclick="addExtra('Pasang GM Inferno (Rp4.000)')">+ GM Inferno</button>
+          </div>
         </div>
       </footer>
     </main>
   </div>
 
   <script>
-    const plans = [
-      { id: 'SAMP 10', cpu:'0.20 Core', disk:'512MB', ram:'350MB', net:'1GBPS', loc:'SINGAPORE', price:'IDR 5.000' },
-      { id: 'SAMP 30', cpu:'0.3 Core', disk:'512MB', ram:'400MB', net:'1GBPS', loc:'SINGAPORE', price:'IDR 10.000' },
-      { id: 'SAMP 50', cpu:'0.3 Core', disk:'512MB', ram:'1GB', net:'1GBPS', loc:'SINGAPORE', price:'IDR 20.000' },
-      { id: 'SAMP 80', cpu:'0.5 Core', disk:'512MB', ram:'1GB', net:'1GBPS', loc:'SINGAPORE', price:'IDR 30.000' },
-      { id: 'SAMP 100', cpu:'0.5 Core', disk:'2GB', ram:'1GB', net:'1GBPS', loc:'SINGAPORE', price:'IDR 40.000' },
-      { id: 'SAMP 150', cpu:'1 Core', disk:'3GB', ram:'2GB', net:'1GBPS', loc:'SINGAPORE', price:'IDR 50.000' }
+    const plans=[
+      {id:'SAMP 10',cpu:'0.20 Core',disk:'512MB',ram:'350MB',net:'1GBPS',price:'Rp 5.000'},
+      {id:'SAMP 30',cpu:'0.30 Core',disk:'512MB',ram:'400MB',net:'1GBPS',price:'Rp 10.000'},
+      {id:'SAMP 50',cpu:'0.30 Core',disk:'512MB',ram:'1GB',net:'1GBPS',price:'Rp 20.000'},
+      {id:'SAMP 80',cpu:'0.50 Core',disk:'512MB',ram:'1GB',net:'1GBPS',price:'Rp 30.000'},
+      {id:'SAMP 100',cpu:'0.50 Core',disk:'2GB',ram:'1GB',net:'1GBPS',price:'Rp 40.000'},
+      {id:'SAMP 150',cpu:'1 Core',disk:'3GB',ram:'2GB',net:'1GBPS',price:'Rp 50.000'}
     ];
-
-    let selectedOS = 'Linux';
-    let selectedPlan = null;
+    let selectedPlan=null;
+    let selectedOS='Linux';
+    let extras=[];
 
     function renderPlans(){
-      const container = document.getElementById('plans');
-      container.innerHTML = '';
-      plans.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
+      const box=document.getElementById('plans');
+      box.innerHTML='';
+      plans.forEach(p=>{
+        const div=document.createElement('div');
+        div.className='card';
+        div.innerHTML=`
           <div>
             <h3>${p.id}</h3>
-            <div class="specs">
-              <div><strong>CPU:</strong> ${p.cpu} · <strong>RAM:</strong> ${p.ram}</div>
-              <div><strong>Disk:</strong> ${p.disk} · <strong>Net:</strong> ${p.net}</div>
-              <div style="margin-top:6px;color:var(--muted)"><strong>Lokasi:</strong> ${p.loc}</div>
-            </div>
+            <div class="specs"><strong>CPU:</strong> ${p.cpu} · <strong>RAM:</strong> ${p.ram}<br>
+            <strong>Disk:</strong> ${p.disk} · <strong>Net:</strong> ${p.net}</div>
           </div>
           <div>
             <div class="price">${p.price}</div>
-            <div class="features">Free voice port · Dijamin lancar</div>
-            <div style="height:10px"></div>
-            <div style="display:flex;gap:8px">
+            <div style="margin-top:8px;display:flex;gap:8px">
               <button class="btn" onclick="selectPlan('${p.id}')">Pilih</button>
               <button class="btn ghost" onclick="quickOrder('${p.id}')">Order Cepat</button>
             </div>
-          </div>
-        `;
-        container.appendChild(card);
+          </div>`;
+        box.appendChild(div);
       });
     }
 
+    function selectPlan(id){selectedPlan=plans.find(p=>p.id===id);updateSummary();}
+    function quickOrder(id){selectPlan(id);placeOrder();}
     function selectOS(os){
-      selectedOS = os;
-      document.getElementById('selOS').textContent = os;
-      document.getElementById('os-linux').classList.toggle('active', os === 'Linux');
-      document.getElementById('os-windows').classList.toggle('active', os === 'Windows');
+      selectedOS=os;
+      document.getElementById('selOS').textContent=os;
+      document.getElementById('os-linux').classList.toggle('active',os==='Linux');
+      document.getElementById('os-windows').classList.toggle('active',os==='Windows');
     }
 
-    function selectPlan(id){
-      selectedPlan = plans.find(p => p.id === id);
+    function addExtra(txt){
+      if(!extras.includes(txt)) extras.push(txt);
       updateSummary();
-      window.scrollTo({top:document.body.scrollHeight, behavior:'smooth'});
-    }
-
-    function quickOrder(id){
-      selectPlan(id);
-      placeOrder();
     }
 
     function updateSummary(){
-      if(!selectedPlan){
-        document.getElementById('selPlan').textContent = '-';
-        document.getElementById('selSpec').textContent = '-';
-        document.getElementById('selPrice').textContent = '-';
-        return;
-      }
-      document.getElementById('selPlan').textContent = selectedPlan.id;
-      document.getElementById('selSpec').textContent = `${selectedPlan.cpu} · ${selectedPlan.ram} · ${selectedPlan.disk}`;
-      document.getElementById('selPrice').textContent = selectedPlan.price;
+      document.getElementById('selPlan').textContent=selectedPlan?selectedPlan.id:'-';
+      document.getElementById('selSpec').textContent=selectedPlan?`${selectedPlan.cpu} · ${selectedPlan.ram}`:'-';
+      document.getElementById('selPrice').textContent=selectedPlan?selectedPlan.price:'-';
+      document.getElementById('selExtra').textContent=extras.length?extras.join(', '):'-';
     }
 
-    function copySummary(){
-      const text = buildSummaryText();
-      navigator.clipboard?.writeText(text).then(()=> {
-        alert('Ringkasan disalin ke clipboard.');
-      }).catch(()=> {
-        prompt('Salin manual berikut:', text);
-      });
-    }
-
-    function buildSummaryText(){
-      return `ORDER HOSTING SAMP
-Paket: ${selectedPlan ? selectedPlan.id : '-'}
-OS: ${selectedOS}
-CPU: ${selectedPlan ? selectedPlan.cpu : '-'}
-RAM: ${selectedPlan ? selectedPlan.ram : '-'}
-Disk: ${selectedPlan ? selectedPlan.disk : '-'}
-Network: ${selectedPlan ? selectedPlan.net : '-'}
-Lokasi: ${selectedPlan ? selectedPlan.loc : '-'}
-Harga: ${selectedPlan ? selectedPlan.price : '-'}
-Keterangan: Free voice port · Dijamin lancar
-`;
+    function buildSummary(){
+      return `ORDER HOSTING SAMP\n`+
+      `Paket: ${selectedPlan?selectedPlan.id:'-'}\n`+
+      `OS: ${selectedOS}\n`+
+      `CPU: ${selectedPlan?selectedPlan.cpu:'-'}\n`+
+      `RAM: ${selectedPlan?selectedPlan.ram:'-'}\n`+
+      `Disk: ${selectedPlan?selectedPlan.disk:'-'}\n`+
+      `Network: ${selectedPlan?selectedPlan.net:'-'}\n`+
+      `Harga: ${selectedPlan?selectedPlan.price:'-'}\n`+
+      `Tambahan: ${extras.length?extras.join(', '):'-'}\n`+
+      `Keterangan: Free voice port · Dijamin lancar.`;
     }
 
     function placeOrder(){
-      if(!selectedPlan){
-        alert('Pilih paket terlebih dahulu (klik tombol "Pilih").');
-        return;
-      }
-      const waPhone = '6285797123671';  // nomor WhatsApp kamu
-      const message = encodeURIComponent(buildSummaryText() + '\nMohon konfirmasi ketersediaan & metode pembayaran. Terima kasih.');
-      const waLink = `https://wa.me/${waPhone}?text=${message}`;
-      window.open(waLink, '_blank');
+      if(!selectedPlan){alert('Pilih paket terlebih dahulu.');return;}
+      const waPhone='6283180723594';
+      const msg=encodeURIComponent(buildSummary()+"\n\nMohon konfirmasi ketersediaan & pembayaran.");
+      window.open(`https://wa.me/${waPhone}?text=${msg}`,'_blank');
     }
 
-    // initial render
+    function copySummary(){
+      navigator.clipboard.writeText(buildSummary());
+      alert('Ringkasan order disalin!');
+    }
+
     renderPlans();
     updateSummary();
   </script>
