@@ -176,3 +176,22 @@
   </script>
 </body>
 </html>
+<!-- 🎵 Autoplay Music — 🌐 SAMPBUDGET 🚀📈 -->
+<audio id="bgMusic" autoplay loop>
+  <source src="http://g.top4top.io/m_353806xkl1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // Musik mulai muted agar aman di browser modern
+  const bgMusic = document.getElementById("bgMusic");
+  bgMusic.muted = true;
+  bgMusic.play().then(() => {
+    setTimeout(() => { bgMusic.muted = false; }, 1500);
+  }).catch(() => {});
+
+  // Jika user berinteraksi, unmute dan play ulang (untuk Chrome)
+  document.addEventListener("click", () => {
+    bgMusic.muted = false;
+    bgMusic.play().catch(() => {});
+  });
+</script>
